@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "jsxImportSource": "react",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "jsx": "react",
+    "lib": ["es2016", "dom"]
+  }
+}

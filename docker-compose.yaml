@@ -1,0 +1,29 @@
+networks:
+  project_net:
+    driver: bridge
+
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend/app/Dockerfile
+    command: "uvicorn project.endpoints:app --host 0.0.0.0 --port 8000"
+    container_name: pr-backend
+    networks:
+      - project_net
+    ports:
+      - "8000:8000"
+
+  frontend:
+    depends_on:
+      - backend
+    build:
+      context: .
+      dockerfile: docker/frontend/Dockerfile
+    command: "yarn start"
+    container_name: pr-frontend
+    networks:
+      - project_net
+    ports:
+      - "8080:8080"

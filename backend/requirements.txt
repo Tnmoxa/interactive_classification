@@ -1,0 +1,9 @@
+setuptools
+fastapi
+uvicorn
+python-dotenv
+earthengine-api
+geemap
+scipy
+scikit-learn
+rasterio
